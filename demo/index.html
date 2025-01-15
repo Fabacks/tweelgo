@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Showcase of various CSS animation effects with interactive examples.">
+    <meta name="keywords" content="CSS, animations, effects, examples, interactive, web design, hover effects, infinite animations">
+    <meta name="author" content="Fabacks">
+    <title>Animations</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./../dist/css/animate.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.2.1/mustache.min.js" integrity="sha512-Qjrukx28QnvFWISw9y4wCB0kTB/ISnWXPz5/RME5o8OlZqllWygc1AB64dOBlngeTeStmYmNTNcM6kfEjUdnnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #444;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+        }
+        code {
+            color: #c7254e;
+        }
+
+        button.btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button.btn:hover {
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        button.btn i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        #header {
+            text-align: center;
+        }
+        #header, #render, #readme {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function(event) {
+            const cssAnimateList = ["beat", "beat_fade", "bounce", "fade", "flip", "shake", "spin", "spin_reverse", "spin_pulse", "swing", "jello", "rubberBand"];
+
+            const template = document.getElementById("tpl").innerHTML;
+            const html = Mustache.render(template, { css_annimate: cssAnimateList });
+            document.getElementById("render").innerHTML = html;
+        });
+    </script>
+
+    <div id="header">
+        <h1>Animate css</h1>
+    </div>
+    <div id="render"></div>
+    <div id="readme">
+        <h1>Doc for css animations</h1>
+        <p>This file contains a collection of keyframe animations and associated classes to apply various animations to icons with the prefix <code>tg-effect-</code>.</p>
+        <p>The animations include:</p>
+        <ul>
+            <li>beat</li>
+            <li>beat-fade</li>
+            <li>bounce</li>
+            <li>fade</li>
+            <li>flip</li>
+            <li>shake</li>
+            <li>spin</li>
+            <li>spin-reverse</li>
+            <li>spin-pulse</li>
+            <li>swing</li>
+            <li>jello</li>
+            <li>rubberBand</li>
+        </ul>
+
+        <h2>Usage in Elements</h2>
+        <ul>
+            <li>Add the class <code>tg-effect-&lt;animation&gt;</code> to your icon element to apply an animation.</li>
+            <li>Add the class <code>tg-effect-&lt;animation&gt;-hover</code> to apply the animation on hover.</li>
+        </ul>
+
+        <h2>Usage in Parent Animated Elements</h2>
+        <ul>
+            <li>Add the class <code>tg-&lt;animation&gt;-parent-hover</code> to your element parent to apply an animation on icon when to hover you.</li>
+        </ul>
+
+        <h2>Modifiers</h2>
+        <ul>
+            <li>Use <code>.tg-animate-delay-Xs</code> to set animation delay, where <code>X</code> is the delay in seconds [1 to 5].</li>
+            <li>Use <code>.tg-animate-duration-Xs</code> to set animation duration, where <code>X</code> is the duration in seconds [1 to 5].</li>
+            <li>Use <code>.tg-animate-count-X</code> to set the number of animation iterations, where <code>X</code> is the count [1 to 5].</li>
+        </ul>
+
+        <h2>Special Modifiers</h2>
+        <ul>
+            <li><code>.tg-animate-delay-faster</code>, <code>.tg-animate-duration-faster</code>: Set time to 0.5s.</li>
+            <li><code>.tg-animate-delay-fast</code>, <code>.tg-animate-duration-fast</code>: Set time to 0.8s.</li>
+            <li><code>.tg-animate-count-infinite</code>: Set infinite iterations.</li>
+        </ul>
+    </div>
+
+
+    <div id="tpl" style="display: none;">
+        <h2>Infinite animations</h2>
+        {{#css_annimate}}
+        <button class="btn btn-success">
+            <i class="fas fa-plus tg-effect-{{.}} tg-animate-count-infinite"></i> {{.}}
+        </button>
+        {{/css_annimate}}
+
+        <hr />
+
+        <h2>Animations on icon hover</h2>
+        {{#css_annimate}}
+        <button class="btn btn-success">
+            <i class="fas fa-plus tg-effect-{{.}}-hover"></i> {{.}}
+        </button>
+        {{/css_annimate}}
+
+        <hr />
+
+        <h2>Animations on parent hover (button)</h2>
+        {{#css_annimate}}
+        <button class="btn btn-success tg-animate-parent-hover">
+            <i class="fas fa-plus tg-effect-{{.}}-hover"></i> {{.}}
+        </button>
+        {{/css_annimate}}
+    </div>
+</body>
+</html>
