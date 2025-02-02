@@ -11,16 +11,16 @@
 * - Add the class 'tg-effect-<animation>-hover' to apply the animation on hover.
 *
 * Usage in parent animated element:
-* - Add the class 'tg-<animation>-parent-hover' to your element parent to apply an animation on icon when to hover you.
+* - Add the class 'tg-parent-hover' to your element parent to apply an animation on icon when to hover you.
 *
 * Modifiers:
-* - Use '.tg-animate-delay-Xs' to set animation delay, where X is the delay in seconds [1 to 5] and -faster / -fast.
-* - Use '.tg-animate-duration-Xs' to set animation duration, where X is the duration in seconds [1 to 5] and -faster / -fast.
-* - Use '.tg-animate-count-X' to set the number of animation iterations, where X is the count [1 to 5].
+* - Use '.tg-animate-delay-Xs' to set animation delay, where X is the delay in seconds [1 to 10] and -faster / -fast.
+* - Use '.tg-animate-duration-Xs' to set animation duration, where X is the duration in seconds [1 to 10] and -faster / -fast.
+* - Use '.tg-animate-count-X' to set the number of animation iterations, where X is the count [0 to 10].
 *
 * Modifiers special:
 * - 'tg-animate-delay-faster', 'tg-animate-duration-faster' set time to 0.5s
-* - 'tg-animate-delay-fast', 'tg-animate-duration-fast' set time to 0.8s (
+* - 'tg-animate-delay-fast', 'tg-animate-duration-fast' set time to 0.8s
 * - 'tg-animate-count-infinite' set itaration infinite
 *
 * Example:
@@ -40,21 +40,12 @@
 .tg-animate-delay-fast {
     animation-delay: 0.8s !important;
 }
-.tg-animate-delay-1s {
-    animation-delay: 1s !important;
+@for $i from 1 through 10 {
+    .tg-animate-delay-#{$i}s {
+        animation-delay: #{$i}s !important;
+    }
 }
-.tg-animate-delay-2s {
-    animation-delay: 2s !important;
-}
-.tg-animate-delay-3s {
-    animation-delay: 3s !important;
-}
-.tg-animate-delay-4s {
-    animation-delay: 4s !important;
-}
-.tg-animate-delay-5s {
-    animation-delay: 5s !important;
-}
+
 
 /* Duration classes */
 .tg-animate-duration-faster {
@@ -63,43 +54,20 @@
 .tg-animate-duration-fast {
     animation-duration: 0.8s !important;
 }
-.tg-animate-duration-1s {
-    animation-duration: 1s !important;
-}
-.tg-animate-duration-2s {
-    animation-duration: 2s !important;
-}
-.tg-animate-duration-3s {
-    animation-duration: 3s !important;
-}
-.tg-animate-duration-4s {
-    animation-duration: 4s !important;
-}
-.tg-animate-duration-5s {
-    animation-duration: 5s !important;
+@for $i from 1 through 10 {
+    .tg-animate-duration-#{$i}s {
+        animation-duration: #{$i}s !important;
+    }
 }
 
 /* Count classes */
 .tg-animate-count-infinite {
     animation-iteration-count: infinite !important;
 }
-.tg-animate-count-0 {
-    animation-iteration-count: 0 !important;
-}
-.tg-animate-count-1 {
-    animation-iteration-count: 1 !important;
-}
-.tg-animate-count-2 {
-    animation-iteration-count: 2 !important;
-}
-.tg-animate-count-3 {
-    animation-iteration-count: 3 !important;
-}
-.tg-animate-count-4 {
-    animation-iteration-count: 4 !important;
-}
-.tg-animate-count-5 {
-    animation-iteration-count: 5 !important;
+@for $i from 0 through 10 {
+    .tg-animate-count-#{$i} {
+        animation-iteration-count: #{$i} !important;
+    }
 }
 
 

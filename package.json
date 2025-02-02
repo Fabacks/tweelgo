@@ -1,7 +1,7 @@
 {
   "name": "Tweelgo",
-  "version": "1.0.0",
-  "description": "Welcome to Tweelgo, css library for animation and simplify",
+  "version": "1.0.1",
+  "description": "Welcome to Tweelgo, css library simplify (animation, etc)",
   "directories": {
     "src": "src"
   },

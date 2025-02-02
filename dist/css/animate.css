@@ -4,7 +4,7 @@
  * Author: Fabacks
  * License: Free distribution except for commercial use
  * GitHub Repository: https://github.com/Fabacks/tweelgo
- * Version 1.0.0
+ * Version 1.0.1
  * 
  * This software is provided "as is" without any warranty. The author is
  * not responsible for any damages or liabilities caused by the use of this software.
@@ -25,13 +25,12 @@
 * - Add the class 'tg-effect-<animation>-hover' to apply the animation on hover.
 *
 * Usage in parent animated element:
-* - Add the class 'tg-<animation>-parent' to your icon element to apply an animation.
-* - Add the class 'tg-<animation>-parent-hover' to your icon element to apply an animation.
+* - Add the class 'tg-parent-hover' to your element parent to apply an animation on icon when to hover you.
 *
 * Modifiers:
-* - Use '.tg-animate-delay-Xs' to set animation delay, where X is the delay in seconds [1 to 5] and -faster / -fast.
-* - Use '.tg-animate-duration-Xs' to set animation duration, where X is the duration in seconds [1 to 5] and -faster / -fast.
-* - Use '.tg-animate-count-X' to set the number of animation iterations, where X is the count [1 to 5].
+* - Use '.tg-animate-delay-Xs' to set animation delay, where X is the delay in seconds [1 to 10] and -faster / -fast.
+* - Use '.tg-animate-duration-Xs' to set animation duration, where X is the duration in seconds [1 to 10] and -faster / -fast.
+* - Use '.tg-animate-count-X' to set the number of animation iterations, where X is the count [0 to 10].
 *
 * Modifiers special:
 * - 'tg-animate-delay-faster', 'tg-animate-duration-faster' set time to 0.5s
@@ -75,6 +74,26 @@
   animation-delay: 5s !important;
 }
 
+.tg-animate-delay-6s {
+  animation-delay: 6s !important;
+}
+
+.tg-animate-delay-7s {
+  animation-delay: 7s !important;
+}
+
+.tg-animate-delay-8s {
+  animation-delay: 8s !important;
+}
+
+.tg-animate-delay-9s {
+  animation-delay: 9s !important;
+}
+
+.tg-animate-delay-10s {
+  animation-delay: 10s !important;
+}
+
 /* Duration classes */
 .tg-animate-duration-faster {
   animation-duration: 0.5s !important;
@@ -102,6 +121,26 @@
 
 .tg-animate-duration-5s {
   animation-duration: 5s !important;
+}
+
+.tg-animate-duration-6s {
+  animation-duration: 6s !important;
+}
+
+.tg-animate-duration-7s {
+  animation-duration: 7s !important;
+}
+
+.tg-animate-duration-8s {
+  animation-duration: 8s !important;
+}
+
+.tg-animate-duration-9s {
+  animation-duration: 9s !important;
+}
+
+.tg-animate-duration-10s {
+  animation-duration: 10s !important;
 }
 
 /* Count classes */
@@ -133,8 +172,28 @@
   animation-iteration-count: 5 !important;
 }
 
+.tg-animate-count-6 {
+  animation-iteration-count: 6 !important;
+}
+
+.tg-animate-count-7 {
+  animation-iteration-count: 7 !important;
+}
+
+.tg-animate-count-8 {
+  animation-iteration-count: 8 !important;
+}
+
+.tg-animate-count-9 {
+  animation-iteration-count: 9 !important;
+}
+
+.tg-animate-count-10 {
+  animation-iteration-count: 10 !important;
+}
+
 /*---- Beat animation ----*/
-@keyframes css_beat {
+@keyframes tg-css_beat {
   0%, 100% {
     transform: scale(1);
   }
@@ -143,7 +202,7 @@
   }
 }
 .tg-effect-beat, .tg-animate-parent-hover:hover .tg-effect-beat-hover, .tg-effect-beat-hover:hover {
-  animation-name: css_beat;
+  animation-name: tg-css_beat;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -154,7 +213,7 @@
 }
 
 /*---- Beat-fade animation ----*/
-@keyframes css_beat-fade {
+@keyframes tg-css_beat-fade {
   0%, 100% {
     transform: scale(1);
     opacity: 1;
@@ -175,7 +234,7 @@
 }
 
 /* ---- Bounce animation ----*/
-@keyframes css_bounce {
+@keyframes tg-css_bounce {
   0%, 100% {
     transform: translateY(0);
   }
@@ -184,7 +243,7 @@
   }
 }
 .tg-effect-bounce, .tg-animate-parent-hover:hover .tg-effect-bounce-hover, .tg-effect-bounce-hover:hover {
-  animation-name: css_bounce;
+  animation-name: tg-css_bounce;
   animation-duration: 1s;
   animation-iteration-count: 1;
 }
@@ -194,7 +253,7 @@
 }
 
 /*---- Fade animation ----*/
-@keyframes css_fade {
+@keyframes tg-css_fade {
   0%, 100% {
     opacity: 1;
   }
@@ -203,7 +262,7 @@
   }
 }
 .tg-effect-fade, .tg-animate-parent-hover:hover .tg-effect-fade-hover, .tg-effect-fade-hover:hover {
-  animation-name: css_fade;
+  animation-name: tg-css_fade;
   animation-duration: 1s;
   animation-iteration-count: 1;
 }
@@ -213,7 +272,7 @@
 }
 
 /*---- Flip animation ----*/
-@keyframes css_flip {
+@keyframes tg-css_flip {
   0%, 100% {
     transform: rotateY(0);
   }
@@ -222,7 +281,7 @@
   }
 }
 .tg-effect-flip, .tg-animate-parent-hover:hover .tg-effect-flip-hover, .tg-effect-flip-hover:hover {
-  animation-name: css_flip;
+  animation-name: tg-css_flip;
   animation-duration: 1s;
   animation-iteration-count: 1;
 }
@@ -232,7 +291,7 @@
 }
 
 /*---- Shake animation ----*/
-@keyframes css_shake {
+@keyframes tg-css_shake {
   0%, 100% {
     transform: translateX(0);
   }
@@ -244,7 +303,7 @@
   }
 }
 .tg-effect-shake, .tg-animate-parent-hover:hover .tg-effect-shake-hover, .tg-effect-shake-hover:hover {
-  animation-name: css_shake;
+  animation-name: tg-css_shake;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.36, 0.07, 0.19, 0.97);
   animation-iteration-count: 1;
@@ -255,7 +314,7 @@
 }
 
 /*---- Spin / rotating animation ----*/
-@keyframes css_spin {
+@keyframes tg-css_spin {
   from {
     transform: rotate(0deg);
   }
@@ -264,7 +323,7 @@
   }
 }
 .tg-effect-spin, .tg-animate-parent-hover:hover .tg-effect-spin-hover, .tg-effect-spin-hover:hover {
-  animation-name: css_spin;
+  animation-name: tg-css_spin;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -275,7 +334,7 @@
 }
 
 /*---- Spin reverse animation ----*/
-@keyframes css_spin-reverse {
+@keyframes tg-css_spin-reverse {
   0% {
     transform: rotate(0deg);
   }
@@ -284,7 +343,7 @@
   }
 }
 .tg-effect-spin_reverse, .tg-animate-parent-hover:hover .tg-effect-spin_reverse-hover, .tg-effect-spin_reverse-hover:hover {
-  animation-name: css_spin-reverse;
+  animation-name: tg-css_spin-reverse;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -295,7 +354,7 @@
 }
 
 /*---- Spin pulse animation ----*/
-@keyframes css_spin-pulse {
+@keyframes tg-css_spin-pulse {
   0%, 100% {
     transform: rotate(0);
     opacity: 1;
@@ -306,7 +365,7 @@
   }
 }
 .tg-effect-spin_pulse, .tg-animate-parent-hover:hover .tg-effect-spin_pulse-hover, .tg-effect-spin_pulse-hover:hover {
-  animation-name: css_spin-pulse;
+  animation-name: tg-css_spin-pulse;
   animation-duration: 1s;
   animation-iteration-count: 1;
 }
@@ -316,7 +375,7 @@
 }
 
 /*---- Swing animation ----*/
-@keyframes css_swing {
+@keyframes tg-css_swing {
   20% {
     transform: rotate3d(0, 0, 1, 15deg);
   }
@@ -334,7 +393,7 @@
   }
 }
 .tg-effect-swing, .tg-animate-parent-hover:hover .tg-effect-swing-hover, .tg-effect-swing-hover:hover {
-  animation-name: css_swing;
+  animation-name: tg-css_swing;
   animation-duration: 1s;
   animation-iteration-count: 1;
 }
@@ -344,7 +403,7 @@
 }
 
 /*---- jello animation ----*/
-@keyframes css_jello {
+@keyframes tg-css_jello {
   from, 11.1%, to {
     transform: translate3d(0, 0, 0);
   }
@@ -371,7 +430,7 @@
   }
 }
 .tg-effect-jello, .tg-animate-parent-hover:hover .tg-effect-jello-hover, .tg-effect-jello-hover:hover {
-  animation-name: css_jello;
+  animation-name: tg-css_jello;
   transform-origin: center;
   animation-duration: 1s;
   animation-iteration-count: 1;
@@ -382,7 +441,7 @@
 }
 
 /*---- rubberBand animation ----*/
-@keyframes css_rubberBand {
+@keyframes tg-css_rubberBand {
   from {
     transform: scale3d(1, 1, 1);
   }
@@ -406,7 +465,7 @@
   }
 }
 .tg-effect-rubberBand, .tg-animate-parent-hover:hover .tg-effect-rubberBand-hover, .tg-effect-rubberBand-hover:hover {
-  animation-name: css_rubberBand;
+  animation-name: tg-css_rubberBand;
   transform-origin: center;
   animation-duration: 1s;
   animation-iteration-count: 1;
